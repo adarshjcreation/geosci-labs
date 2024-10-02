@@ -324,7 +324,7 @@ def createMagSurvey(xyzd, B):
     """
 
     rxLoc = mag.receivers.Point(xyzd[:, :3])
-    source_field = mag.sources.SourceField(receiver_list=[rxLoc], parameters=B)
+    source_field = mag.sources.UniformBackgroundField(receiver_list=[rxLoc], parameters=B)
     survey = mag.Survey(source_field)
     dobj = data.Data(survey, xyzd[:, 3])
 
